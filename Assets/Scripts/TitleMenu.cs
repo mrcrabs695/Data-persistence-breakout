@@ -28,7 +28,7 @@ public class TitleMenu : MonoBehaviour
     public void Quit()
     {
         SaveManager.Instance.SaveHighScore();
-        
+
         #if UNITY_EDITOR
         EditorApplication.ExitPlaymode();
         #else
@@ -40,10 +40,5 @@ public class TitleMenu : MonoBehaviour
     void Update()
     {
         SaveManager.Instance.playerName = inputText.text;
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Debug.Log("Name is: " + SaveManager.Instance.playerName);
-        }
     }
 }
