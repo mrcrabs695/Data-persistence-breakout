@@ -17,7 +17,7 @@ public class TitleMenu : MonoBehaviour
     void Start()
     {
         highScoreText.text = ("High Score: " + SaveManager.Instance.highScoreName + " : " + SaveManager.Instance.highScore);
-        
+
     }
 
     public void StartGame()
@@ -27,6 +27,8 @@ public class TitleMenu : MonoBehaviour
 
     public void Quit()
     {
+        SaveManager.Instance.SaveHighScore();
+        
         #if UNITY_EDITOR
         EditorApplication.ExitPlaymode();
         #else
